@@ -1,0 +1,42 @@
+linhas= 10
+colunas= 2
+
+Times=[]
+for i in range (linhas):
+  Times.append([0]*colunas)
+
+for i in range(linhas):
+  print('Times que se enfrentam na rodada',i+1,':')
+  for j in range(colunas):
+    Times[i][j]= input()
+    
+Placar=[]
+for i in range (linhas):
+  Placar.append([0]*colunas)
+
+for i in range(linhas):
+  print('Placar times da rodada',i+1,':')
+  for j in range(colunas):
+    Placar[i][j]= int (input())
+
+for i in range(linhas):
+  for j in range(colunas):
+    print(Times[i][j],'  ',end='')
+  print()
+    
+for i in range(linhas):
+  for j in range(colunas):
+    print(Placar[i][j],'  ',end='')
+  print()
+
+resultado=[]
+for i in range(linhas):
+  if Placar[i][0] > Placar[i][1]:
+    resultado.append(Times[i][0])
+  elif Placar[i][0] < Placar[i][1]:
+    resultado.append(Times[i][1])
+
+if len(resultado)==0:
+  print('Todos os jogos empataram')
+else:
+  print('Os times vencedores são:', resultado ,' ',end=' ')
